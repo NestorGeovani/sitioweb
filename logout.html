@@ -1,0 +1,52 @@
+<html>
+<head>
+<title>mikrotik hotspot > logout</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="expires" content="-1">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;"/>
+<link rel="stylesheet" href="login.css" media="screen">
+
+</head>
+
+<body>
+<script language="JavaScript">
+<!--
+    function openLogin() {
+	if (window.name != 'hotspot_logout') return true;
+	open('$(link-login)', '_blank', '');
+	window.close();
+
+	return false;
+    
+    }
+//-->
+</script>
+
+<div align="center">
+<table width="50%" height="50%">
+</br></br></br></br></br></br>
+<div align="center"> <img src="img/logo.png"  /></div>
+
+<tr>
+<td align="center" valign="middle" >
+<b style="color:#FFF;font-size: 22px;">Usted se ha desconectado</b> <br><br>
+<table class="rwd_auto fontsize" border="1">  
+<tr><td align="right" bgcolor="#0000">Usuario</td><td bgcolor="#CCCCCC">$(username)</td></tr>
+<tr><td align="right" bgcolor="#0000">Dirección IP</td><td bgcolor="#CCCCCC">$(ip)</td></tr>
+<tr><td align="right" bgcolor="#0000">Dirección MAC</td><td bgcolor="#CCCCCC">$(mac)</td></tr>
+<tr><td align="right" bgcolor="#0000">Tiempo conectado</td><td bgcolor="#CCCCCC">$(uptime)</td></tr>
+$(if session-time-left)
+<tr><td align="right" bgcolor="#0000">Tiempo restante</td><td bgcolor="#CCCCCC">$(session-time-left)</td></tr>
+$(endif)
+<tr><td align="right" bgcolor="#0000">Bytes Subida/Bajada:</td><td bgcolor="#CCCCCC">$(bytes-in-nice) / $(bytes-out-nice)</td></tr>
+</table>
+<br>
+<form action="$(link-login)" name="login" onSubmit="return openLogin()">
+<input type="submit" value="Conectarse" class="boton">
+</form>
+</td>
+</table>
+</div>
+</body>
+</html>
